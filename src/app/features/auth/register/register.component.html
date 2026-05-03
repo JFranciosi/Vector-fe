@@ -1,0 +1,67 @@
+<div class="login-wrapper">
+    <!-- Decorative elements for animated background -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Glassmorphism Card -->
+    <div class="glass-card">
+        <div class="card-header">
+            <h1 class="title">Join JF</h1>
+        </div>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="login-form">
+            <div class="input-container">
+                <input type="text" id="username" formControlName="username" placeholder=" " class="custom-input" />
+                <label for="username" class="floating-label">Username</label>
+            </div>
+
+            <div class="input-row">
+                <div class="input-container">
+                    <input type="text" id="name" formControlName="name" placeholder=" " class="custom-input" />
+                    <label for="name" class="floating-label">Nome</label>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="surname" formControlName="surname" placeholder=" " class="custom-input" />
+                    <label for="surname" class="floating-label">Cognome</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input type="email" id="email" formControlName="email" placeholder=" " class="custom-input" />
+                <label for="email" class="floating-label">Email</label>
+            </div>
+
+            <div class="input-container">
+                <input [type]="showPassword ? 'text' : 'password'" id="password" formControlName="password" placeholder=" " class="custom-input" />
+                <label for="password" class="floating-label">Password</label>
+                <button type="button" class="password-toggle" (click)="togglePassword()" aria-label="Mostra password">
+                    @if (!showPassword) {
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    } @else {
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                    }
+                </button>
+            </div>
+
+            @if (errorMessage) {
+            <div class="error-banner fade-in">
+                <span>{{ errorMessage }}</span>
+            </div>
+            }
+
+            <div class="actions">
+                <button type="submit" [disabled]="registerForm.invalid || isLoading" class="login-button">
+                    @if (isLoading) {
+                        <span class="loader"></span>
+                    } @else {
+                        Registrati
+                    }
+                </button>
+            </div>
+
+            <div class="card-footer">
+                <p>Hai già un account? <a routerLink="/login" class="link">Accedi qui</a></p>
+            </div>
+        </form>
+    </div>
+</div>

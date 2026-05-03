@@ -1,0 +1,211 @@
+.home-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/antonov-bg.webp') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    padding: 40px;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.home-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.4), rgba(0, 138, 201, 0.1));
+    z-index: 0;
+}
+
+/* Decorative Blobs */
+.blob {
+    position: absolute;
+    filter: blur(120px);
+    z-index: 0;
+    opacity: 0.15;
+    animation: move 40s infinite alternate;
+}
+
+.blob-1 {
+    width: 800px;
+    height: 800px;
+    background: var(--color-teal);
+    top: -300px;
+    left: -200px;
+}
+
+.blob-2 {
+    width: 700px;
+    height: 700px;
+    background: var(--color-blue-light);
+    bottom: -200px;
+    right: -100px;
+    animation-delay: -15s;
+}
+
+@keyframes move {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(200px, 150px) scale(1.2);
+    }
+}
+
+.main-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Mega Glass Card */
+.mega-glass-card {
+    width: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+    -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(1.1);
+    border: 1px solid var(--glass-border);
+    border-top: 1px solid var(--glass-border-bright);
+    border-radius: 48px;
+    padding: 60px;
+    box-shadow: 0 40px 100px var(--glass-shadow);
+    animation: fadeInScale 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.mega-glass-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+    transform: rotate(45deg);
+    animation: shine 8s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.welcome-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.placeholder-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.icon-box {
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
+
+.floating-icon {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.placeholder-content h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.placeholder-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.card-footer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.3);
+    transform: translateY(-2px);
+}

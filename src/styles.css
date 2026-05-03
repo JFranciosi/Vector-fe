@@ -1,5 +1,46 @@
+:root {
+  /* User Palette */
+  --color-blue-dark: #008ac9;
+  --color-blue-light: #00a9d4;
+  --color-teal: #00c5c7;
+  --color-mint: #2bdda9;
+  --color-green: #9eee86;
+  --color-yellow: #f9f871;
+
+  /* Theme Aliases */
+  --primary-color: var(--color-blue-dark);
+  --secondary-color: var(--color-teal);
+  --accent-color: var(--color-mint);
+  --warning-color: var(--color-yellow);
+  
+  /* Glass Surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-hover: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border-bright: rgba(255, 255, 255, 0.5);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
+  
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  
+  /* Inputs */
+  --input-bg: rgba(0, 0, 0, 0.05);
+  --input-bg-focus: rgba(255, 255, 255, 0.15);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-shadow: rgba(0, 197, 199, 0.2);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    background: #000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0f172a; /* Fallback */
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
 }
