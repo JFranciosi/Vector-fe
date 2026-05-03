@@ -78,17 +78,22 @@
     to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.card-header { text-align: center; margin-bottom: 35px; }
+.card-header { text-align: center; margin-bottom: 25px; }
 
-.title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 2.6rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin: 0;
-    letter-spacing: -1.5px;
-    text-shadow: 0 4px 10px var(--glass-shadow);
+.login-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 0px;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+    animation: float 4s ease-in-out infinite;
 }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.title { display: none; }
 
 .login-form { display: flex; flex-direction: column; gap: 2.2em; }
 

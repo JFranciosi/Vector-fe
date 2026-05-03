@@ -2,10 +2,13 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../core/auth/services/auth.service';
 
+import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
+import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SidebarComponent, NavbarComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

@@ -1,0 +1,48 @@
+.navbar {
+    height: 70px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px var(--glass-shadow);
+    width: 100%;
+}
+
+.nav-brand {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-badge {
+    width: 35px;
+    height: 35px;
+    background: var(--color-blue-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
