@@ -8,7 +8,7 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, SidebarComponent, NavbarComponent],
+  imports: [SidebarComponent, NavbarComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
